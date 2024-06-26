@@ -6,16 +6,15 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 
-class MainActivity : AppCompatActivity() {
+class ItemEntryActivity : AppCompatActivity() {
 
     private lateinit var viewModel: ItemEntryViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_item_entry)
 
         viewModel = ViewModelProvider(this).get(ItemEntryViewModel::class.java)
-        viewModel.initDatabase(this)
 
         val itemName = findViewById<EditText>(R.id.item_name)
         val itemQuantity = findViewById<EditText>(R.id.item_quantity)
@@ -31,4 +30,3 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
-
