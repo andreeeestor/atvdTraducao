@@ -1,8 +1,10 @@
 package com.example.kotlin_room2
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 
@@ -27,8 +29,15 @@ class MainActivity : AppCompatActivity() {
             val quantity = itemQuantity.text.toString().toIntOrNull() ?: 0
             val price = itemPrice.text.toString().toDoubleOrNull() ?: 0.0
 
-            viewModel.saveItem(name, quantity, price)
+            if (name.isNotBlank()) {
+                Log.d("MainActivity", "Salvando item com o nome: $name, quantidade: $quantity, preço: $price")
+                viewModel.saveItem(name, quantity, price)
+                Toast.makeText(this, "Item salvo", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Por favor insira um nome", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }
+
 

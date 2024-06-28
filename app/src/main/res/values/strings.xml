@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">kotlin-room2</string>
+    <string name="app_name">Inventário</string>
+    <string name="item_name">Nome do Item</string>
+    <string name="item_quantity">Quantidade</string>
+    <string name="item_price">Preço</string>
+    <string name="save_button">Salvar</string>
+    <string name="item_saved">Item salvo</string>
+    <string name="enter_name">Por favor, insira um nome</string>
 </resources>

@@ -9,7 +9,7 @@ import androidx.room.OnConflictStrategy
 import kotlinx.coroutines.flow.Flow
 @Dao
 interface ItemDao {
-    @Query("SELECT * from items ORDER BY name ASC")
+    @Query("SELECT * from items ORDER BY nome ASC")
     fun getAllItems(): Flow<List<Item>>
 
     @Query("SELECT * from items WHERE id = :id")
